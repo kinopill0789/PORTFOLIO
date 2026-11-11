@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ポートフォリオ | 第1版</title>
+  <style>
+    :root {
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --border: #e2e8f0;
+      --tag-bg: #eff6ff;
+      --tag-text: #1e40af;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      letter-spacing: 0.05em;
+    }
+
+    header p {
+      color: #94a3b8;
+      font-size: 1.1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      margin-top: 40px;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      border-bottom: 3px solid var(--accent);
+      padding-bottom: 8px;
+      margin-bottom: 24px;
+      display: inline-block;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .profile-info p {
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+
+    .project-title {
+      font-size: 1.3rem;
+      color: var(--text-main);
+      margin-bottom: 12px;
+    }
+
+    .project-meta {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+
+    .media-item {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background-color: #f1f5f9;
+    }
+
+    .media-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border: 2px dashed var(--border);
+    }
+
+    .btn-link {
+      display: inline-block;
+      background-color: var(--accent);
+      color: white;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background-color 0.2s;
+      margin-top: 8px;
+    }
+
+    .btn-link:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .skill-category {
+      margin-bottom: 20px;
+    }
+
+    .skill-category h3 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+
+    .skill-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+
+    .skill-table th, .skill-table td {
+      border: 1px solid var(--border);
+      padding: 12px;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    .skill-table th {
+      background-color: #f1f5f9;
+      font-weight: 600;
+      width: 25%;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-right: 6px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 60px;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>PORTFOLIO</h1>
+    <p>高専2年生 (17歳) / Iコース(知能情報コース)</p>
+  </header>
+
+  <div class="container">
+
+    <!-- 自己紹介 -->
+    <section>
+      <h2 class="section-title">About Me</h2>
+      <div class="card profile-info">
+        <p><strong>所属:</strong> 高専2年生 (17歳)</p>
+        <p><strong>専攻:</strong> Iコース(知能情報コース)</p>
+        <p style="margin-top: 12px;">
+          プログラミングとものづくりを中心に学習を進めています。主にPythonを用いた小規模ツールの開発や、C#/Unityを用いた2Dゲーム開発、各種マイコン制御の実験などに取り組んでいます。
+        </p>
+      </div>
+    </section>
+
+    <!-- プロジェクト・作品 -->
+    <section>
+      <h2 class="section-title">Projects & Works</h2>
+
+      <!-- 課題04 Pythonプログラム -->
+      <div class="card">
+        <h3 class="project-title">【課題04】[HIGH and LOW]</h3>
+        <p class="project-meta">使用言語/環境: Python / Google Colaboratory</p>
+
+        <!-- スクリーンショット4枚 -->
+        <div class="media-grid">
+          <img src="work_image01.png" alt="Pythonプログラム画面1" class="media-item">
+          <img src="work_image02.png" alt="Pythonプログラム画面2" class="media-item">
+          <img src="work_image03.png" alt="Pythonプログラム画面3" class="media-item">
+          <img src="work_image04.png" alt="Pythonプログラム画面4" class="media-item">
+        </div>
+
+        <a href="https://colab.research.google.com/drive/1PojChnp7hyqf7gLmvikrD7rcEsGNI_ii" target="_blank" rel="noopener" class="btn-link">Google Colabを見る</a>
+      </div>
+
+      <!-- 高専祭プロジェクト -->
+      <div class="card">
+        <h3 class="project-title">【高専祭展示】ゴミ分別ゲーム</h3>
+        <p class="project-meta">担当役割:2Dゲームアセット,UIデザイン作成担当</p>
+        <p>
+          ゴミ分別のゲームです。自治体と難易度を選択するとチュートリアルが始まります。<br>
+ゲームが始まると画面左からゴミが流れてくるので、それを正しく分別することでスコアを伸ばします。<br>
+ゴミによっては捨てる前に分解する必要があります。(例：ペットボトルのキャップと蓋を外す、空き缶のふたを外すなど)<br>
+ゲーム性を持たせるためにスコアにはコンボ要素がある点やスコアに応じてランクが表示され、次のランクまであと〇点か出てくる点,
+ゲーム終了後「もう一度」ボタンを押すことですぐにリトライできるようにしてプレイヤーがリトライするまでを短くした点が特徴です。<br>
+私はこのゲームのデザイン面の担当をしました。ゴミのデザインに関してはAIを活用して作成したのですがこだわった点があり、
+全体として統一された絵柄かつ、パッと見るだけでそれが何のゴミかを把握できるようなデザインにこだわりました。
+また、分解できるゴミはレイヤー分けすることで、ゲーム内で分解したときにアニメーションをつけることができるようにしました。
+        </p>
+
+        <!-- スクリーンショット4枚 -->
+        <div class="media-grid">
+          <img src="app_image01.png" alt="ゲーム画面1" class="media-item">
+          <img src="app_image02.png" alt="ゲーム画面2" class="media-item">
+          <img src="app_image03.png" alt="ゲーム画面3" class="media-item">
+          <img src="app_image04.png" alt="ゲーム画面4" class="media-item">
+        </div>
+
+        <a href="https://github.com/campus-hackathon-mms/TrashGameWeb" target="_blank" rel="noopener" class="btn-link">プロジェクト リポジトリを見る</a>
+      </div>
+    </section>
+
+    <!-- スキル・経験 -->
+    <section>
+      <h2 class="section-title">Skills & Experience</h2>
+      <div class="card">
+        
+        <div class="skill-category">
+          <h3>プログラミング言語</h3>
+          <table class="skill-table">
+            <thead>
+              <tr>
+                <th>言語</th>
+                <th>経験レベル・具体的内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="tag">Python</span></td>
+                <td>学校授業・課題での基礎習得。データ処理スクリプト、CLIツールの作成、Google Colab上の開発経験あり。</td>
+              </tr>
+              <tr>
+                <td><span class="tag">Arduino (C/C++)</span></td>
+                <td>学校授業レベル。センサー取得やLED/モータ制御など基本的なハードウェア制御の実装が可能。</td>
+              </tr>
+              <tr>
+                <td><span class="tag">Scratch</span></td>
+                <td>授業でのアルゴリズム基礎理解に使用。ブロック組みによる処理フローの視覚化・理解。</td>
+              </tr>
+              <tr>
+                <td><span class="tag">C#</span></td>
+                <td>Unityを用いた2Dゲーム開発にて、ゲームロジック・アセット読み込みスクリプト等の実装経験あり。</td>
+              </tr>
+              <tr>
+                <td><span class="tag">HTML / CSS</span></td>
+                <td>本ポートフォリオ制作をはじめとする基本的なWebページのレイアウト・スタイリング構造の構築。</td>
+              </tr>
+              <tr>
+                <td><span class="tag">Java</span></td>
+                <td>趣味で更新している小規模なサイト作成に使用。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="skill-category" style="margin-top: 30px;">
+          <h3>開発環境・ソフトウェア・Webサービス</h3>
+          <table class="skill-table">
+            <thead>
+              <tr>
+                <th>ツール / 環境</th>
+                <th>活用内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="tag">Git / GitHub</span></td>
+                <td>リポジトリの作成、コミット、プッシュ、GitHub Pagesを用いた静的サイトの公開作業。</td>
+              </tr>
+              <tr>
+                <td><span class="tag">VS Code / venv</span></td>
+                <td>Python等のコード記述および仮想環境（venv）の構築・パッケージ管理環境での開発。</td>
+              </tr>
+              <tr>
+                <td><span class="tag">WSL</span></td>
+                <td>Windows上でのLinux（Ubuntu等）環境を用いたコマンドライン操作・開発環境構築。</td>
+              </tr>
+              <tr>
+                <td><span class="tag">Arduino IDE / Tinkercad</span></td>
+                <td>回路シミュレーション（Tinkercad）および実機マイコンへのプログラム書き込み・デバッグ。</td>
+              </tr>
+              <tr>
+                <td><span class="tag">Deeds-DCS</span></td>
+                <td>論理回路の設計・動作検証・デジタル回路シミュレーション演習。</td>
+              </tr>
+              <tr>
+                <td><span class="tag">MakeCode for micro:bit</span></td>
+                <td>micro:bitを用いたフィジカルコンピューティング演習およびブロックプログラミング。</td>
+              </tr>
+              <tr>
+                <td><span class="tag">Ambient / Real VNC</span></td>
+                <td>[利用経験に応じて記述：IoTデータの可視化 / リモートデスクトップ接続による実験環境操作]</td>
+              </tr>
+              <tr>
+                <td><span class="tag">Unity</span></td>
+                <td>2Dゲーム開発におけるゲームロジック・アセット読み込みスクリプト等の実装経験あり。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Portfolio Version 1.0</p>
+  </footer>
+
+</body>
+</html>
